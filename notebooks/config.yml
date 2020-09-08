@@ -1,0 +1,50 @@
+# path files
+path_files:
+    domain: GULFSTREAM
+#   Model file
+    fileMod: /ref/NATL60-CJM165_GULFSTREAM_ssh_y2013.1y.nc
+#   OI file (list of 3 files: nadir, swot, nadir+swot)
+    fileOI:  /oi/ssh_NATL60_swot_4nadir.nc
+#   Obs file (list of 3 files: nadir, swot, nadir+swot)
+    fileObs: /data/dataset_nadir_0d_swot.nc
+
+# data options
+data_options:
+    flagTrWMissingData: 2
+#   load OI: work on SSH or anomaly w.r.t OI (SSH-OI)
+    flagloadOIData: 1 
+#   use additional covariates in initial layer
+    include_covariates: True  
+    lfile_cov:
+    - /oi/ssh_NATL60_swot_4nadir.nc
+    lname_cov:
+    - ssh_mod
+    lid_cov:
+    - OI
+#   Length of the 4th dimension 
+    size_tw: 11
+#   half-width of holes
+    Wsquare: 4 
+#   number of holes
+    Nsquare: 3  
+    sigNoise: 1e-1
+    flagTrOuputWOMissingData: 1
+    stdMask: 0.
+    dropout: 0.0
+    wl2: 0.0000
+
+# NN model options
+NN_options:
+#   Dimension of the latent space
+    DimAE: 40    
+#   model type, 1: ConvAE or 2: GENN
+    flagAEType: 2     
+#   multiscale model
+    flag_MultiScaleAEModel: 0 
+
+# training parameters
+training_params:
+#   load pre-defined AE model or not    
+    batch_size: 4
+    NbEpoc: 20
+    Niter: 20
