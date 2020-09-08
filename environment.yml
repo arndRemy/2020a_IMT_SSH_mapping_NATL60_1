@@ -3,7 +3,6 @@ channels:
 dependencies:
   - python=3.5.6
   - time
-  - datetime
   - configparser
   - mkl
   - tqdm=4.37.0
