@@ -18,8 +18,13 @@ dependencies:
   - xarray=0.15.1
   - tensorflow==2.1.0
   - keras=2.3.1
-  - pip=20.2.1
+  - pip=20.2.1=5.5.0
   - pip:
+    - jupyterlab_launcher=0.13.1
+    - jupyterlab=1.2.1
+    - ipywidgets=7.4.1
+    - ipykernel=4.10.0
+    - nbconvert=
     - ruamel.yaml=0.16.10 
     - pyflann-py3
     - opencv-python 
