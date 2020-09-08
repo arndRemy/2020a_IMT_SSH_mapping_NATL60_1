@@ -2,11 +2,11 @@
 path_files:
     domain: GULFSTREAM
 #   Model file
-    fileMod: /ref/NATL60-CJM165_GULFSTREAM_ssh_y2013.1y.nc
+    fileMod: ref.nc
 #   OI file (list of 3 files: nadir, swot, nadir+swot)
-    fileOI:  /oi/ssh_NATL60_swot_4nadir.nc
+    fileOI:  oi.nc
 #   Obs file (list of 3 files: nadir, swot, nadir+swot)
-    fileObs: /data/dataset_nadir_0d_swot.nc
+    fileObs: data.nc
 
 # data options
 data_options:

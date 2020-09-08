@@ -39,8 +39,7 @@ Last, for reconstruction methods that need a spin-up, the **observations** can b
 ## Quick start with DINAE code
 
 In this github repository, a new end-to-end learning approach based on specifically designed neural networks (NN) for the interpolation problem is providef. The full code to read the data, run the model and display preliminary figures and scores is given. The outputs of the model for the evaluation period are provided in a NetCDF file, used for the post-processing of figures and scores.
-You can follow the quickstart guide in [this notebook](https://github.com/CIA-Oceanix/2020a_IMT_SSH_mapping_NATL60/tree/master/notebooks/quickstart.ipynb) or launch it directly from <a href="https://binder.pangeo.io/v2/gh/imt-data-challenges/2020a_IMT_SSH_mapping_NATL60/master?filepath=quickstart.ipynb" target="_blank">binder</a>.
-
+You can follow the quickstart guide in [this notebook](https://github.com/maxbeauchamp/2020a_IMT_SSH_mapping_NATL60/tree/master/notebooks/quickstart.ipynb) or launch it directly from [![Binder](https://binder.pangeo.io/badge_logo.svg)](https://binder.pangeo.io/v2/gh/maxbeauchamp/2020a_IMT_SSH_mapping_NATL60/master?filepath=notebooks%2Fquickstart.ipynb).
 ### Architecture of the code
 
 Associated preprints:
@@ -118,9 +117,9 @@ The data is hosted [here](!wget https://s3.eu-central-1.wasabisys.com/melody) wi
 
 To start out download the *daily reference, observation and OI* dataset using: 
 ```shell
-wget https://s3.eu-central-1.wasabisys.com/melody/DATA.ncdf -O   "data.ncdf"
-wget https://s3.eu-central-1.wasabisys.com/melody/REF.ncdf -O    "ref.ncdf"
-wget https://s3.eu-central-1.wasabisys.com/melody/OI.ncdf -O     "oi.ncdf"
+wget https://s3.eu-central-1.wasabisys.com/melody/DATA.nc -O   "data.nc"
+wget https://s3.eu-central-1.wasabisys.com/melody/REF.nc -O    "ref.nc"
+wget https://s3.eu-central-1.wasabisys.com/melody/OI.nc -O     "oi.nc"
 ```
 
 ## Baseline and evaluation

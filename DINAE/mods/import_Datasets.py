@@ -20,7 +20,7 @@ def ndarray_NaN(shape):
     arr[:] = np.nan
     return arr
 
-def import_Data_OSSE(dict_global_Params,type_obs):
+def import_Data(dict_global_Params,type_obs):
 
     # import Global Parameters
     for key,val in dict_global_Params.items():

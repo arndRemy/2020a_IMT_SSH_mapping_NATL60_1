@@ -32,7 +32,7 @@ from collections import OrderedDict
 import pickle
 import argparse
 import ruamel.yaml
-import yaml
+from pathlib import Path
 
 assert sys.version_info >= (3,5), "Need Python>=3.6"
 
@@ -40,10 +40,6 @@ assert sys.version_info >= (3,5), "Need Python>=3.6"
 # Config
 ##################################
 dirs = {}
-
-# Define paths
-datapath="/gpfswork/rech/yrf/uba22to/DATA/"
-basepath="/linkhome/rech/genimt01/uba22to/DINAE_keras/"
 
 print("Initializing DINAE libraries...",flush=True)
 
@@ -85,6 +81,7 @@ from .mods.import_Datasets    import *
 from .mods.define_Models      import *
 from .mods.FP_solver          import *
 from .mods.tools              import *
+from .mods.yml_tools          import *
 
 print("...Done") # ... initializing Libraries
 
