@@ -8,29 +8,27 @@ dependencies:
   - mkl
   - tqdm=4.37.0
   - argparse
-  - matplotlib=3.0.1
-  - pandas=0.25.3
-  - cartopy=0.16.0
-  - numpy=1.17.3
-  - scikit-learn=0.20.0
-  - scikit-image=0.14.0
-  - scipy=1.1.0
+  - matplotlib=3.1.3
+  - pandas=1.0.3
+  - cartopy=0.17.0
+  - numpy=1.18.1
+  - scikit-learn=0.22.2.post1
+  - scipy=1.4.1
   - h5py==2.8.0
-  - netCDF4=1.4.1
-  - xarray=0.13.0
-  - tensorflow==1.13.0rc0
-  - tensorflow-estimator==2.0.1
-  - tensorflow-gpu==2.0.0
-  - keras=2.2.2
+  - netCDF4=1.5.1.2
+  - xarray=0.15.1
+  - tensorflow==2.1.0
+  - keras=2.3.1
+  - pip=20.2.1
   - pip:
-    - ruamel.yaml=0.15.46 
+    - ruamel.yaml=0.16.10 
     - pyflann-py3
     - opencv-python 
     - itertools
     - collections
     - warnings
     - builtins
-    - shapely=1.6.4.post1
+    - shapely=1.7.0
     - datetime
     - shutil
     - pickle
