@@ -1,5 +1,9 @@
 channels:
+  - menpo
   - conda-forge
+  - pyviz
+  - anaconda
+  - defaults
 dependencies:  
   - pangeo-notebook==2020.05.04
   - python
