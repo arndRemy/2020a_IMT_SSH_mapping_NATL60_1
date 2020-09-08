@@ -130,9 +130,7 @@ The evaluation of the mapping methods is based on the comparison of the SSH reco
 ```
 .
 |-- utils
-|   |-- graphics.py: Generic functions for plotting with cartopy
 |   |-- plot_maps.py:
-|   |-- nRMSE.py:
 |   |-- fourierSpectra.py:
 ```
 
