@@ -26,8 +26,7 @@ import time
 from time import sleep
 import multiprocessing
 import mkl
-#import cv2
-from tqdm import tqdm
+import cv2
 from collections import OrderedDict
 import pickle
 import argparse
@@ -52,7 +51,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import shapely
 from shapely import wkt
-#import geopandas as gpd
 from cartopy import crs as ccrs
 import cartopy.feature as cfeature
 from cartopy.io import shapereader
@@ -68,7 +66,6 @@ import scipy.ndimage as nd
 from scipy.interpolate import RegularGridInterpolator
 import xarray as xr
 from netCDF4 import Dataset
-from pyflann import *
 
 ##################################
 # Tools
