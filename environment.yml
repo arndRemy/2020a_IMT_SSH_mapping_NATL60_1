@@ -12,6 +12,7 @@ dependencies:
   - pandas
   - mkl
   - mkl-service
+  - opencv 
   - numpy
   - scikit-learn
   - scipy
@@ -21,6 +22,5 @@ dependencies:
   - keras=2.2.2
   - pip:
     - ruamel.yaml==0.16.10 
-    - opencv-python
     
     
