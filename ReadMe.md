@@ -8,7 +8,7 @@ The goal is to investigate how to best reconstruct sequences of Sea Surface Heig
 * to beat this baseline according to scores also described below and in Jupyter notebooks.
 * to build a webpage where other teams can dynamically run their method and confront their performance scores to other methods
 
-The datasets are hosted [here](https://s3.eu-central-1.wasabisys.com/melody) with Wasabi Cloud Strorage solution, see below to see how to download the public datasets.
+The datasets are hosted [here](https://s3.eu-central-1.wasabisys.com/melody) with Wasabi Cloud Storage solution, see below to see how to download the public datasets.
 
 ### Reference simulation
 

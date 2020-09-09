@@ -8,6 +8,7 @@ dependencies:
   - python
   - matplotlib
   - cartopy
+  - dask
   - shapely
   - pandas
   - mkl
