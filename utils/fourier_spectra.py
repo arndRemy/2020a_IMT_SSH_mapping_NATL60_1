@@ -1,3 +1,23 @@
+import scipy 
+import numpy as np
+
+def hanning2d(M, N):
+    """
+    A 2D hanning window, as per IDL's hanning function.  See numpy.hanning for the 1d description
+    """
+    
+    if N <= 1:
+        return np.hanning(M)
+    elif M <= 1:
+        return np.hanning(N) # scalar unity; don't window if dims are too small
+    else:
+        return np.outer(np.hanning(M),np.hanning(N))
+
+def cart2pol(x, y):
+    rho = np.sqrt(x**2 + y**2)
+    phi = np.arctan2(y, x)
+    return(phi, rho)
+
 def Imputing_NaN(data, invalid=None):
     """
     Replace the value of invalid 'data' cells (indicated by 'invalid') 

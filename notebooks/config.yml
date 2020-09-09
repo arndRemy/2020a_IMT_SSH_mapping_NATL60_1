@@ -16,7 +16,7 @@ data_options:
 #   use additional covariates in initial layer
     include_covariates: True  
     lfile_cov:
-    - /oi/ssh_NATL60_swot_4nadir.nc
+    - oi.nc
     lname_cov:
     - ssh_mod
     lid_cov:
@@ -32,6 +32,12 @@ data_options:
     stdMask: 0.
     dropout: 0.0
     wl2: 0.0000
+#   Index evaluation dates
+    start_eval_index: 52
+    end_eval_index: 94
+#   Index trainig dates
+    start_train_index: 122
+    end_train_index: 365
 
 # NN model options
 NN_options:
@@ -46,5 +52,5 @@ NN_options:
 training_params:
 #   load pre-defined AE model or not    
     batch_size: 4
-    NbEpoc: 20
-    Niter: 20
+    NbEpoc: 1
+    Niter: 1

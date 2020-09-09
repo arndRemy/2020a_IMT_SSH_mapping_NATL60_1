@@ -5,15 +5,9 @@ channels:
   - anaconda
   - defaults
 dependencies:  
-  - pangeo-notebook==2020.05.04
   - python
-  - configparser
-  - mkl
-  - argparse
   - matplotlib
-  - pandas
   - cartopy
-  - shapely
   - numpy
   - scikit-learn
   - scipy
@@ -23,9 +17,6 @@ dependencies:
   - keras=2.3.1
   - pip:
     - ruamel.yaml==0.16.10 
-    - opencv-python 
-    - datetime
-    - pickle
-    - sys
+    - opencv-python
     
     

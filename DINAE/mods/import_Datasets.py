@@ -29,8 +29,8 @@ def import_Data(dict_global_Params,type_obs):
     #*** Start reading the data ***#
     thrMisData = 0.000
     # list of test dates
-    indN_Tt = np.arange(60,80)               # index of evaluation period
-    indN_Tr = np.delete(range(365),indN_Tt)  # index of training period
+    indN_Tt = np.arange(start_eval_index,end_eval_index)   # index of evaluation period
+    indN_Tr = np.arange(start_train_index,end_train_index) # index of training period
     lday_test=[ datetime.strftime(datetime.strptime("2012-10-01",'%Y-%m-%d')\
                           + timedelta(days=np.float64(i)),"%Y-%m-%d") for i in indN_Tt ]
 
