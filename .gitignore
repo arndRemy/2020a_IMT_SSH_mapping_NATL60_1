@@ -1,0 +1,5 @@
+# Don't track these files
+notebooks/data.nc
+notebooks/ref.nc
+notebooks/oi.nc
+notebooks/dask-worker-space
