@@ -1,4 +1,6 @@
 from DINAE import *
+from .ConvAE             import ConvAE as ConvAE
+from .GENN               import GENN as GENN
 
 def define_Models(dict_global_Params,genFilename,x,mask):
 

@@ -1,4 +1,6 @@
 from DINAE import *
+from .def_DINConvAE import *
+from .save_Models import *
 
 def FP_solver(dict_global_Params,genFilename,x_train,x_train_missing,mask_train,gt_train,\
                         meanTr,stdTr,x_test,x_test_missing,mask_test,gt_test,lday_test,x_train_OI,x_test_OI,encoder,decoder,model_AE,DimCAE):
@@ -38,7 +40,6 @@ def FP_solver(dict_global_Params,genFilename,x_train,x_train_missing,mask_train,
             NBProjCurrent = NbProjection[comptUpdate]
             print("..... Update/initialize number of projections in DINCOnvAE model # %d"%(NbProjection[comptUpdate]))
             global_model_FP,global_model_FP_Masked = define_DINConvAE(NbProjection[comptUpdate],model_AE,x_train.shape,\
-                                                                          flag_MultiScaleAEModel,flagUseMaskinEncoder,\
                                                                           size_tw,include_covariates,N_cov)
             if flagTrOuputWOMissingData == 1:
                 global_model_FP.compile(loss='mean_squared_error',optimizer=keras.optimizers.Adam(lr=lrUpdate[comptUpdate]))

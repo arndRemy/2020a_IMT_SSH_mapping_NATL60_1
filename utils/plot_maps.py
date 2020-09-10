@@ -1,6 +1,5 @@
 import os
 import matplotlib
-matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt
 from cartopy import crs as ccrs
 import cartopy.feature as cfeature

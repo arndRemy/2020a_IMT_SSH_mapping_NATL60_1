@@ -46,7 +46,6 @@ print("Initializing DINAE libraries...",flush=True)
 # Scientific and mapping
 ##################################
 import matplotlib
-matplotlib.use('Agg') # Must be before importing matplotlib.pyplot or pylab!
 import matplotlib.pyplot as plt
 import pandas as pd
 import shapely
@@ -76,6 +75,8 @@ from keras.constraints import Constraint
 from keras import backend as K
 from .mods.import_Datasets    import *
 from .mods.define_Models      import *
+from .mods.ConvAE             import *
+from .mods.GENN               import *
 from .mods.FP_solver          import *
 from .mods.tools              import *
 from .mods.yml_tools          import *

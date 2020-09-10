@@ -52,5 +52,5 @@ NN_options:
 training_params:
 #   load pre-defined AE model or not    
     batch_size: 4
-    NbEpoc: 1
-    Niter: 1
+    NbEpoc: 20
+    Niter: 5

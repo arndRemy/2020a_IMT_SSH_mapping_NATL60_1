@@ -2,4 +2,5 @@
 notebooks/data.nc
 notebooks/ref.nc
 notebooks/oi.nc
+notebooks/*pickle
 notebooks/dask-worker-space

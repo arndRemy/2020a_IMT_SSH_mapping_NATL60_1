@@ -4,9 +4,10 @@ This repository contains codes and sample notebooks for downloading and processi
 
 ## Motivation
 
-The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Simulation Experiment_ framework: "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. Satellite observations are simulated by sampling the reference simulation based on realistic orbits of past, existing or future altimetry satellites. A baseline reconstruction method is provided, namely optimal interpolation (see below), and the practical goal of the challenge is:
+The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Simulation Experiment_ framework: "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. Satellite observations are simulated by sampling the reference simulation based on realistic orbits of past, existing or future altimetry satellites. A baseline reconstruction method is provided, namely optimal interpolation (see below), and some practical goals will have to be defined in this challenge such as:
 * to beat this baseline according to scores also described below and in Jupyter notebooks.
 * to build a webpage where other teams can dynamically run their method and confront their performance scores to other methods
+* to allow pangeo binder link work on a distant virtual machine with GPU capabilities to ease the reproduction of DL methods
 
 The datasets are hosted [here](https://s3.eu-central-1.wasabisys.com/melody) with Wasabi Cloud Storage solution, see below to see how to download the public datasets.
 
@@ -15,7 +16,7 @@ The datasets are hosted [here](https://s3.eu-central-1.wasabisys.com/melody) wit
 The Nature Run (NR) used in this work corresponds to the NATL60 configuration  (Ajayi et al. 2020 doi:[10.1029/2019JC015827](https://doi.org/10.1029/2019JC015827)) of the NEMO (Nucleus for European Modeling of the Ocean) model. It is one of the most advanced state-of-the-art basin-scale high-resolution (1/60°) simulation available today, whose surface field effective resolution is about 7km.
 To download the *daily reference* dataset, do: 
 ```shell
-wget https://s3.eu-central-1.wasabisys.com/melody/REF.nc -O    "ref.nc"
+wget https://s3.eu-central-1.wasabisys.com/melody/ref.nc -O    "ref.nc"
 ```
 
 ### Observations
@@ -26,7 +27,7 @@ The SSH daily observations include:
 All the data (nadir & SWOT) are simulated based on the NATL60 baseline. Realistic observation errors can optionnaly be included in the interpolation.
 To download the *daily observation* dataset, do: 
 ```shell
-wget https://s3.eu-central-1.wasabisys.com/melody/DATA.nc -O   "data.nc"
+wget https://s3.eu-central-1.wasabisys.com/melody/data.nc -O   "data.nc"
 ```
 
 ### Optimal Interpolation (OI)
@@ -37,7 +38,7 @@ agency. It is mainly based on optimal interpolation techniques whose parameters 
 in Taburel et al. (2020). 
 To download the *daily OI* dataset, do: 
 ```shell
-wget https://s3.eu-central-1.wasabisys.com/melody/OI.nc -O     "oi.nc"
+wget https://s3.eu-central-1.wasabisys.com/melody/oi.nc -O     "oi.nc"
 ```
 
 ### Data training & evaluation sequence
@@ -53,7 +54,7 @@ Last, for reconstruction methods that need a spin-up, the **observations** can b
 ## Quick start with DINAE code
 
 In this github repository, a new end-to-end learning approach based on specifically designed neural networks (NN) for the interpolation problem is providef. The full code to read the data, run the model and display preliminary figures and scores is given. The outputs of the model for the evaluation period are provided in a NetCDF file, used for the post-processing of figures and scores.
-You can follow the quickstart guide in [this notebook](https://github.com/maxbeauchamp/2020a_IMT_SSH_mapping_NATL60/tree/master/notebooks/quickstart.ipynb) or launch it directly from [![Binder](https://binder.pangeo.io/badge_logo.svg)](https://binder.pangeo.io/v2/gh/maxbeauchamp/2020a_IMT_SSH_mapping_NATL60/master?filepath=notebooks%2Fquickstart.ipynb).
+You can follow the quickstart guide in [this notebook](https://github.com/maxbeauchamp/2020a_IMT_SSH_mapping_NATL60/tree/master/notebooks/quickstart.ipynb) or launch it directly from [![Binder](https://binder.pangeo.io/badge_logo.svg)](https://binder.pangeo.io/v2/gh/maxbeauchamp/2020a_IMT_SSH_mapping_NATL60/master?filepath=notebooks%2Fquickstart.ipynb) (the binder link is working but crashes at some point because only CPU's capabilities are enabled for the moment: it is a point of improvement of the challenge).
 
 ### Preprints and Software License
 
@@ -130,8 +131,9 @@ The evaluation of the mapping methods is based on the comparison of the SSH reco
 ```
 .
 |-- utils
-|   |-- plot_maps.py:
-|   |-- fourierSpectra.py:
+|   |-- plot_maps.py: plot ground truth, oi and FP-GENN results
+|   |-- export_NetCDF.py: export pickle file to NetCDF
+|   |-- fourierSpectra.py: compute fourier spectra
 ```
 
 ## Acknowledgement
