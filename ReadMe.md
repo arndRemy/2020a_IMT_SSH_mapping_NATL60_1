@@ -45,11 +45,18 @@ wget https://s3.eu-central-1.wasabisys.com/melody/oi.nc -O     "oi.nc"
 
 All the datasets (NATL60 reference, nadir/SWOT, OI) are provided on the same regular grids with 0.05°x0.05° effective resolution. The dataset covers the period starting from 2012-10-01 to 2013-09-30.
 
-* Regarding the evaluation period, the SSH interpolations will be assessed over the period from 2012-10-22 to 2012-12-02: 42 days, which is equivalent to two SWOT cycles in the SWOT science phase orbit.
-* Regarding the learning period, the **reference data** can be used from 2013-01-02 to 2013-09-30. But the reference data between 2012-12-02 and 2013-01-02 should never be used so that any learning period or other method-related-training period can be considered uncorrelated to the evaluation period.
+Two family of experiments can be considered:
+* *Experience n.1*. Because the NATL60 native run is
+only one-year long which is relatively short in comparison with the training period typically used in this type of work. To get around this issue, a four 20-days long validation period can be used (see the corresponding timeline below). This period is homogeneously distributed along this one-year dataset. This configuration is in particular used in [Beauchamp et al. (2020)](https://hal-imt-atlantique.archives-ouvertes.fr/hal-02929973).
+
+![Data Sequence](figs/DC-data_availability_1.png)
+ 
+* *Experience n.2*. In this second experiment, the evaluation and training periods are built according to spin-up related methods (typically model-based data assimilation):
+  * Regarding the evaluation period, the SSH interpolations will be assessed over the period from 2012-10-22 to 2012-12-02: 42 days, which is equivalent to two SWOT cycles in the SWOT science phase orbit.
+  * Regarding the learning period, the **reference data** can be used from 2013-01-02 to 2013-09-30. But the reference data between 2012-12-02 and 2013-01-02 should never be used so that any learning period or other method-related-training period can be considered uncorrelated to the evaluation period.
 Last, for reconstruction methods that need a spin-up, the **observations** can be used from 2012-10-01 until the beginning of the evaluation period (21 days). This spin-up period is not included in the evaluation
 
-![Data Sequence](figs/DC-data_availability.png)
+![Data Sequence](figs/DC-data_availability_2.png)
  
 ## Quick start with DINAE code
 
@@ -139,3 +146,4 @@ The evaluation of the mapping methods is based on the comparison of the SSH reco
 ## Acknowledgement
 
 The structure of this data challenge was to a large extent inspired by the [Boost-SWOT 2020 SSH Mapping Data Challenge](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60).
+Funding for these experiments was provided by the National Centre for Space Studies (CNES), the French government space agency.
